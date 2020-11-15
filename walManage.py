@@ -1,6 +1,5 @@
 import pdb
 import os
-import pdb 
 
 def walPurge(argo):
   ddate = argo[1]
@@ -11,14 +10,13 @@ def walPurge(argo):
   pgdata = os.environ["PGDATA"]
   waldir = pgdata+"/pg_wal"
   statusdir = waldir+"/archive_status"
-  print(waldir)
   listOfFiles=os.listdir(waldir)
   listo=[]
   datelist=[]
   for f in listOfFiles:
   	if os.path.isfile(os.path.join(waldir, f)):
-  		listo.append(waldir+"/"+f)
-  print(listo)
+      walfile = waldir+"/"+f
+  		listo.append(walfile)
   return
 if __name__=='__main__':
   if (len(sys.argv) < 2):
