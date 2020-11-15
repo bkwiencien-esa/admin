@@ -1,6 +1,5 @@
 import pdb
 import os
-import glob
 import pdb 
 
 def walPurge(argo):
