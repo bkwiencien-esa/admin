@@ -16,4 +16,4 @@ fi
 }
 findDir
 $BACKUP -D $diro -Ft -z -X stream
-backupManage.py $a
+walManage.py $a
