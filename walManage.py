@@ -1,5 +1,8 @@
+#! /Users/bobkwiencien/anaconda/bin/python
 import pdb
 import os
+import sys
+import datetime as dt
 
 def walPurge(argo):
   ddate = argo[1]
@@ -14,9 +17,9 @@ def walPurge(argo):
   listo=[]
   datelist=[]
   for f in listOfFiles:
-  	if os.path.isfile(os.path.join(waldir, f)):
-      walfile = waldir+"/"+f
-  		listo.append(walfile)
+  	if (os.path.isfile(os.path.join(waldir, f))):
+  		listo.append(waldir+"/"+f)
+  print(listo)    
   return
 if __name__=='__main__':
   if (len(sys.argv) < 2):
