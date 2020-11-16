@@ -28,6 +28,7 @@ def walPurge(argo):
 			print("filetime {}".format(filetime))
 			if checkdate > filetime:
 				print("i will delete the bitch")
+				os.remove(waldir+"/"+f)
 	return
 if __name__=='__main__':
 	if (len(sys.argv) < 2):
