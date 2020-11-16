@@ -16,12 +16,9 @@ def walPurge(argo):
 	waldir = pgdata+"/pg_wal"
 	archivedir = pgdata+"/archive"
 	statusdir = waldir+"/archive_status"
-	listOfFiles=os.listdir(waldir)
-	listo=[]
-	datelist=[]
-	for f in listOfFiles:
+	listOfWalFiles=os.listdir(waldir)
+	for f in listOfWalFiles:
 		if (os.path.isfile(os.path.join(waldir, f))):
-			listo.append(waldir+"/"+f)
 			ctime=os.path.getctime(waldir+"/"+f)
 			filetime=dt.datetime.fromtimestamp(ctime)
 			print("checkdate {}".format(checkdate))
