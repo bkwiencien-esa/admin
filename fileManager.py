@@ -3,7 +3,15 @@ import pdb
 import os
 import sys
 import datetime as dt
-
+def removeOtioseFiles(chck,indir):
+	listin = os.listdir(indir)
+	for f in listin:
+		if (os.path.isfile(os.path.join(indir, f))):
+			ctime=os.path.getctime(indir+"/"+f)
+			filetime=dt.datetime.fromtimestamp(ctime)
+			if chck > filetime:
+				os.remove(indir+"/"+f)
+	return
 def walPurge(argo):
 	ddate = argo[1]
 	try:
