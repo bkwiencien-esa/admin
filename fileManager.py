@@ -19,7 +19,6 @@ def walPurge(argo):
 	except ValueError:
 				raise ValueError("Incorrect date format, should be YYYY-MM-DD")      
 	pgdata = os.environ["PGDATA"]
-	waldir = pgdata+"/pg_wal"
 	removeOtioseFiles(checkdate,pgdata+"/pg_wal")
 	removeOtioseFiles(checkdate,pgdata+"/archive")
 	removeOtioseFiles(checkdate,pgdata+"/archive_status")		
