@@ -6,7 +6,6 @@ import datetime as dt
 
 def walPurge(argo):
 	ddate = argo[1]
-	#pdb.set_trace()
 	try:
 				checkdate = dt.datetime.strptime(sys.argv[1], '%Y-%m-%d')
 				print("Checkdate = ".format(checkdate))
@@ -21,11 +20,15 @@ def walPurge(argo):
 		if (os.path.isfile(os.path.join(waldir, f))):
 			ctime=os.path.getctime(waldir+"/"+f)
 			filetime=dt.datetime.fromtimestamp(ctime)
-			print("checkdate {}".format(checkdate))
-			print("filetime {}".format(filetime))
 			if checkdate > filetime:
-				print("i will delete the bitch")
 				os.remove(waldir+"/"+f)
+	listOfArchiveFiles=os.listdir(archivedir)			
+	for ff in listOfArchiveFiles:
+		if (os.path.isfile(os.path.join(archivedir, ff))):
+			ctime=os.path.getctime(archivedir+"/"+ff)
+			filetime=dt.datetime.fromtimestamp(ctime)
+			if checkdate > filetime:
+				os.remove(archivedir+"/"+ff)			
 	return
 if __name__=='__main__':
 	if (len(sys.argv) < 2):
