@@ -5,7 +5,7 @@ PGDATA=/usr/local/var/postgres
 BACKUP=/usr/local/Cellar/postgresql/12.1/bin/pg_basebackup
 DIRBASE=/Users/bobkwiencien/backups
 MKDIR=/bin/mkdir
-WALMANAGE=walManage.py
+WALMANAGE=fileManager.py
 findDir()  {
 a=`date "+%Y-%m-%d"`
 diro=$DIRBASE/$a
