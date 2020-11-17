@@ -1,5 +1,4 @@
 #! /Users/bobkwiencien/anaconda/bin/python
-import pdb
 import os
 import sys
 import datetime as dt
@@ -21,7 +20,7 @@ def walPurge(argo):
 	pgdata = os.environ["PGDATA"]
 	removeOtioseFiles(checkdate,pgdata+"/pg_wal")
 	removeOtioseFiles(checkdate,pgdata+"/archive")
-	removeOtioseFiles(checkdate,pgdata+"/archive_status")		
+	removeOtioseFiles(checkdate,pgdata+"/pg_wal/archive_status")		
 	return
 if __name__=='__main__':
 	if (len(sys.argv) < 2):
